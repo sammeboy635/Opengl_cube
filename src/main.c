@@ -2,6 +2,7 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 #include "cube.h"
 #include "vert.h"
@@ -11,6 +12,9 @@
 #define SCREEN_HEIGHT 720
 #define SCREEN_H 665
 #define Move_Speed 10
+#define CUBE_SIZE 5
+
+#define GLFW_ARROW_CURSOR 0x00036001
 
 void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mods);
 void DrawCube(GLfloat centerPosX, GLfloat centerPosY, GLfloat centerPosZ, GLfloat edgeLength);
@@ -20,6 +24,9 @@ GLfloat rotationY = 0.0f;
 
 GLfloat X;
 GLfloat Y;
+
+GLfloat px;
+GLfloat py;
 
 Vert *vert;
 
@@ -57,7 +64,7 @@ void controls(GLFWwindow *window, int key, int scancode, int action, int mods)
     }
     if (glfwGetKey(window, GLFW_KEY_SPACE))
     {
-        vert_add(vert, X, Y, -500);
+        vert_add(vert, px, py, -500);
     }
     if (glfwGetKey(window, GLFW_KEY_1))
     {
@@ -75,7 +82,27 @@ void controls(GLFWwindow *window, int key, int scancode, int action, int mods)
     {
         vert_add_rectangle(vert, 200, 200, -500, 500, 400, -500);
     }
+    if (glfwGetKey(window, GLFW_KEY_0))
+    {
+        char debug[100];
+        glfwGetCursorPos(window, &px, &py);
+        //glDebugMessageInsert(GL_DEBUG_SOURCE_APPLICATION, GL_DEBUG_TYPE_OTHER, 0, GL_DEBUG_SEVERITY_NOTIFICATION, -1, "test");
+        sprintf(debug, "%f", px);
+        puts(debug);
+    }
 }
+
+void mouse_input(GLFWwindow *window, double xpos, double ypos)
+{
+    //char debug[100];
+    //glfwGetCursorPos(window, &px, &py);
+
+    px = xpos;
+    py = abs(ypos - SCREEN_HEIGHT);
+    //sprintf(debug, "%f", py);
+    //puts(debug);
+}
+
 void DrawOther(int size, int *vertices)
 {
 
@@ -87,7 +114,7 @@ void DrawOther(int size, int *vertices)
     //gluLookAt(0, 0, 0, 0, 0, 0, 0, 0, 0);
     glDrawArrays(GL_QUADS, 0, size);
     glDisableClientState(GL_VERTEX_ARRAY);
-    sleep(.1);
+    //sleep(.1);
 }
 
 int main(void)
@@ -106,6 +133,7 @@ int main(void)
     //glfwSetKeyCallback(window, keyCallback);
     glfwSetInputMode(window, GLFW_STICKY_KEYS, 1);
     glfwSetKeyCallback(window, controls);
+
     int screenWidth, screenHeight;
     glfwGetFramebufferSize(window, &screenWidth, &screenHeight);
 
@@ -124,11 +152,18 @@ int main(void)
     glOrtho(0, SCREEN_WIDTH, 0, SCREEN_HEIGHT, 0, 1000); // essentially set coordinate system
     glMatrixMode(GL_MODELVIEW);                          // (default matrix mode) modelview matrix defines how your objects are transformed (meaning translation, rotation and scaling) in your world
     glLoadIdentity();                                    // same as above comment
+    glfwSwapInterval(1);                                 // Sets the frames per second
+
+    //Cursor Items
+    GLFWcursor *cursor = glfwCreateStandardCursor(GLFW_ARROW_CURSOR); //creates the cursor to show
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);        //sets the Cursor and the cursor to show.
+    glfwSetCursor(window, cursor);                                    //sets the cursor to be used for the window
+    glfwSetCursorPosCallback(window, mouse_input);                    //Sets a function to call when cursor is on screen.
 
     X = SCREEN_WIDTH / 2;
     Y = SCREEN_HEIGHT / 2;
 
-    vert = vert_init();
+    vert = vert_init(CUBE_SIZE);
     //vert_add(vert, X, Y, -500);
     //cubeCalc *cc = cube_init(50);
     //int vertices[24];
@@ -157,7 +192,7 @@ int main(void)
         //vertIndex = 0;
         //X = X + 2;
         //Y = Y + 2;
-
+        //mouse_input(window);
         glPopMatrix();
 
         // Swap front and back buffers

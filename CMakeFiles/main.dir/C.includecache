@@ -17,6 +17,8 @@ GLFW/glfw3.h
 -
 unistd.h
 -
+stdlib.h
+-
 cube.h
 /home/samuel/Documents/cProgramming/glfwTesting/src/cube.h
 vert.h

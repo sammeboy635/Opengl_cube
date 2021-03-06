@@ -2,14 +2,14 @@
 #define INIT_SIZE 1024
 #define SIZE_CUBE 32
 
-Vert *vert_init()
+Vert *vert_init(int cubeSize)
 {
     Vert *self = malloc(sizeof(Vert));
     self->vertices = (int *)calloc(INIT_SIZE, sizeof(int));
     self->index = 0;
     self->size = INIT_SIZE;
     self->total = 0;
-    self->cc = cube_init(5);
+    self->cc = cube_init(cubeSize);
     return self;
 }
 
