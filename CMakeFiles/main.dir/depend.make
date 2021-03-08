@@ -16,16 +16,38 @@ CMakeFiles/main.dir/deps/sqlite/sqlite3.c.o: deps/sqlite/sqlite3.c
 CMakeFiles/main.dir/deps/tinycthread/tinycthread.c.o: deps/tinycthread/tinycthread.c
 CMakeFiles/main.dir/deps/tinycthread/tinycthread.c.o: deps/tinycthread/tinycthread.h
 
-CMakeFiles/main.dir/src/cube.c.o: src/cube.c
-CMakeFiles/main.dir/src/cube.c.o: src/cube.h
-
-CMakeFiles/main.dir/src/main.c.o: src/cube.h
+CMakeFiles/main.dir/src/main.c.o: src/config/config.h
 CMakeFiles/main.dir/src/main.c.o: src/main.c
-CMakeFiles/main.dir/src/main.c.o: src/vert.h
+CMakeFiles/main.dir/src/main.c.o: src/processing/cube.h
+CMakeFiles/main.dir/src/main.c.o: src/processing/vert.h
+CMakeFiles/main.dir/src/main.c.o: src/util/list.h
 CMakeFiles/main.dir/src/main.c.o: deps/glew/include/GL/glew.h
 CMakeFiles/main.dir/src/main.c.o: deps/glfw/include/GLFW/glfw3.h
 
-CMakeFiles/main.dir/src/vert.c.o: src/cube.h
-CMakeFiles/main.dir/src/vert.c.o: src/vert.c
-CMakeFiles/main.dir/src/vert.c.o: src/vert.h
+CMakeFiles/main.dir/src/pixel.c.o: src/pixel.c
+CMakeFiles/main.dir/src/pixel.c.o: src/pixel.h
+
+CMakeFiles/main.dir/src/processing/calc.c.o: src/config/config.h
+CMakeFiles/main.dir/src/processing/calc.c.o: src/processing/calc.c
+CMakeFiles/main.dir/src/processing/calc.c.o: src/processing/calc.h
+CMakeFiles/main.dir/src/processing/calc.c.o: src/processing/cube.h
+CMakeFiles/main.dir/src/processing/calc.c.o: src/processing/vert.h
+CMakeFiles/main.dir/src/processing/calc.c.o: src/util/list.h
+
+CMakeFiles/main.dir/src/processing/cube.c.o: src/processing/cube.c
+CMakeFiles/main.dir/src/processing/cube.c.o: src/processing/cube.h
+
+CMakeFiles/main.dir/src/processing/dynamic_array.c.o: src/processing/dynamic_array.c
+
+CMakeFiles/main.dir/src/processing/vert.c.o: src/config/config.h
+CMakeFiles/main.dir/src/processing/vert.c.o: src/processing/cube.h
+CMakeFiles/main.dir/src/processing/vert.c.o: src/processing/vert.c
+CMakeFiles/main.dir/src/processing/vert.c.o: src/processing/vert.h
+CMakeFiles/main.dir/src/processing/vert.c.o: src/util/list.h
+
+CMakeFiles/main.dir/src/util/hashlist.c.o: src/util/hashlist.c
+CMakeFiles/main.dir/src/util/hashlist.c.o: src/util/hashlist.h
+
+CMakeFiles/main.dir/src/util/list.c.o: src/util/list.c
+CMakeFiles/main.dir/src/util/list.c.o: src/util/list.h
 

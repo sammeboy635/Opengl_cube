@@ -3,9 +3,9 @@
 
 #include <stdio.h>
 
-typedef struct Pixel
+typedef struct Screen
 {
     int ***chunk;
-} Pixel;
+} Screen;
 
 #endif

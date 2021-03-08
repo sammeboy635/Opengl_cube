@@ -16,16 +16,38 @@ CMakeFiles/main.dir/deps/sqlite/sqlite3.c.o
 CMakeFiles/main.dir/deps/tinycthread/tinycthread.c.o
  /home/samuel/Documents/cProgramming/glfwTesting/deps/tinycthread/tinycthread.c
  /home/samuel/Documents/cProgramming/glfwTesting/deps/tinycthread/tinycthread.h
-CMakeFiles/main.dir/src/cube.c.o
- /home/samuel/Documents/cProgramming/glfwTesting/src/cube.c
- /home/samuel/Documents/cProgramming/glfwTesting/src/cube.h
 CMakeFiles/main.dir/src/main.c.o
- /home/samuel/Documents/cProgramming/glfwTesting/src/cube.h
+ /home/samuel/Documents/cProgramming/glfwTesting/src/config/config.h
  /home/samuel/Documents/cProgramming/glfwTesting/src/main.c
- /home/samuel/Documents/cProgramming/glfwTesting/src/vert.h
+ /home/samuel/Documents/cProgramming/glfwTesting/src/processing/cube.h
+ /home/samuel/Documents/cProgramming/glfwTesting/src/processing/vert.h
+ /home/samuel/Documents/cProgramming/glfwTesting/src/util/list.h
  deps/glew/include/GL/glew.h
  deps/glfw/include/GLFW/glfw3.h
-CMakeFiles/main.dir/src/vert.c.o
- /home/samuel/Documents/cProgramming/glfwTesting/src/cube.h
- /home/samuel/Documents/cProgramming/glfwTesting/src/vert.c
- /home/samuel/Documents/cProgramming/glfwTesting/src/vert.h
+CMakeFiles/main.dir/src/pixel.c.o
+ /home/samuel/Documents/cProgramming/glfwTesting/src/pixel.c
+ /home/samuel/Documents/cProgramming/glfwTesting/src/pixel.h
+CMakeFiles/main.dir/src/processing/calc.c.o
+ /home/samuel/Documents/cProgramming/glfwTesting/src/config/config.h
+ /home/samuel/Documents/cProgramming/glfwTesting/src/processing/calc.c
+ /home/samuel/Documents/cProgramming/glfwTesting/src/processing/calc.h
+ /home/samuel/Documents/cProgramming/glfwTesting/src/processing/cube.h
+ /home/samuel/Documents/cProgramming/glfwTesting/src/processing/vert.h
+ /home/samuel/Documents/cProgramming/glfwTesting/src/util/list.h
+CMakeFiles/main.dir/src/processing/cube.c.o
+ /home/samuel/Documents/cProgramming/glfwTesting/src/processing/cube.c
+ /home/samuel/Documents/cProgramming/glfwTesting/src/processing/cube.h
+CMakeFiles/main.dir/src/processing/dynamic_array.c.o
+ /home/samuel/Documents/cProgramming/glfwTesting/src/processing/dynamic_array.c
+CMakeFiles/main.dir/src/processing/vert.c.o
+ /home/samuel/Documents/cProgramming/glfwTesting/src/config/config.h
+ /home/samuel/Documents/cProgramming/glfwTesting/src/processing/cube.h
+ /home/samuel/Documents/cProgramming/glfwTesting/src/processing/vert.c
+ /home/samuel/Documents/cProgramming/glfwTesting/src/processing/vert.h
+ /home/samuel/Documents/cProgramming/glfwTesting/src/util/list.h
+CMakeFiles/main.dir/src/util/hashlist.c.o
+ /home/samuel/Documents/cProgramming/glfwTesting/src/util/hashlist.c
+ /home/samuel/Documents/cProgramming/glfwTesting/src/util/hashlist.h
+CMakeFiles/main.dir/src/util/list.c.o
+ /home/samuel/Documents/cProgramming/glfwTesting/src/util/list.c
+ /home/samuel/Documents/cProgramming/glfwTesting/src/util/list.h

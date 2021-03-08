@@ -496,12 +496,6 @@ X11_xkbfile_INCLUDE_PATH:PATH=/usr/include
 X11_xkbfile_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libxkbfile.so
 
 //Value Computed by CMake
-craft_BINARY_DIR:STATIC=/home/samuel/Documents/cProgramming/glfwTesting
-
-//Value Computed by CMake
-craft_SOURCE_DIR:STATIC=/home/samuel/Documents/cProgramming/glfwTesting
-
-//Value Computed by CMake
 main_BINARY_DIR:STATIC=/home/samuel/Documents/cProgramming/glfwTesting
 
 //Value Computed by CMake

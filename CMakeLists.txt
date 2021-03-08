@@ -2,11 +2,18 @@ cmake_minimum_required(VERSION 2.8)
 
 project(main)
 
-FILE(GLOB SOURCE_FILES src/*.c)
+FILE(GLOB SOURCE_FILES 
+src/processing/*.c
+src/util/*.c
+src/*.c
+)
+
 
 add_executable(
     main
     ${SOURCE_FILES}
+    ${PROCESS_FILES}
+    ${UTIL_FILES}
     deps/glew/src/glew.c
     deps/lodepng/lodepng.c
     deps/noise/noise.c

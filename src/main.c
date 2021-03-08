@@ -4,17 +4,10 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-#include "cube.h"
-#include "vert.h"
-
-#define SCREEN_WIDTH 1080
-#define SCREEN_W 1030
-#define SCREEN_HEIGHT 720
-#define SCREEN_H 665
-#define Move_Speed 10
-#define CUBE_SIZE 5
-
-#define GLFW_ARROW_CURSOR 0x00036001
+#include "processing/cube.h"
+#include "processing/vert.h"
+#include "util/list.h"
+#include "config/config.h"
 
 void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mods);
 void DrawCube(GLfloat centerPosX, GLfloat centerPosY, GLfloat centerPosZ, GLfloat edgeLength);
@@ -25,8 +18,8 @@ GLfloat rotationY = 0.0f;
 GLfloat X;
 GLfloat Y;
 
-GLfloat px;
-GLfloat py;
+double px;
+double py;
 
 Vert *vert;
 
@@ -86,7 +79,6 @@ void controls(GLFWwindow *window, int key, int scancode, int action, int mods)
     {
         char debug[100];
         glfwGetCursorPos(window, &px, &py);
-        //glDebugMessageInsert(GL_DEBUG_SOURCE_APPLICATION, GL_DEBUG_TYPE_OTHER, 0, GL_DEBUG_SEVERITY_NOTIFICATION, -1, "test");
         sprintf(debug, "%f", px);
         puts(debug);
     }
@@ -94,24 +86,17 @@ void controls(GLFWwindow *window, int key, int scancode, int action, int mods)
 
 void mouse_input(GLFWwindow *window, double xpos, double ypos)
 {
-    //char debug[100];
-    //glfwGetCursorPos(window, &px, &py);
-
     px = xpos;
     py = abs(ypos - SCREEN_HEIGHT);
-    //sprintf(debug, "%f", py);
-    //puts(debug);
 }
 
 void DrawOther(int size, int *vertices)
 {
 
-    //printf("%d,%d\n", centerPosX, centerPosY);
     glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //Change to GL_Line GL_FILL
     glColor3f(1, 1, 1);
     glEnableClientState(GL_VERTEX_ARRAY);
     glVertexPointer(3, GL_INT, 0, vertices);
-    //gluLookAt(0, 0, 0, 0, 0, 0, 0, 0, 0);
     glDrawArrays(GL_QUADS, 0, size);
     glDisableClientState(GL_VERTEX_ARRAY);
     //sleep(.1);
@@ -164,10 +149,6 @@ int main(void)
     Y = SCREEN_HEIGHT / 2;
 
     vert = vert_init(CUBE_SIZE);
-    //vert_add(vert, X, Y, -500);
-    //cubeCalc *cc = cube_init(50);
-    //int vertices[24];
-    //int vertIndex = 0;
 
     // Loop until the user closes the window
     while (!glfwWindowShouldClose(window))
@@ -181,12 +162,6 @@ int main(void)
         glRotatef(rotationX, 1, 0, 0);
         glRotatef(rotationY, 0, 1, 0);
         glTranslatef(-X, -Y, 500);
-
-        //cc->cube_set_xyz(cc, X, Y, -500);
-        //cc->cube_vert_cpy(cc, 4, vertices, &vertIndex);
-
-        //cc->cube_set_xyz(cc, X + 50, Y + 50, -500);
-        //cc->cube_vert_cpy(cc, 4, vertices, &vertIndex);
 
         DrawOther(vert->total, vert->vertices);
         //vertIndex = 0;

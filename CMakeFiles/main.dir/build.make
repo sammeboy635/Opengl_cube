@@ -57,22 +57,9 @@ include CMakeFiles/main.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/main.dir/flags.make
 
-CMakeFiles/main.dir/src/cube.c.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/cube.c.o: src/cube.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/cProgramming/glfwTesting/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/main.dir/src/cube.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/src/cube.c.o   -c /home/samuel/Documents/cProgramming/glfwTesting/src/cube.c
-
-CMakeFiles/main.dir/src/cube.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/cube.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/samuel/Documents/cProgramming/glfwTesting/src/cube.c > CMakeFiles/main.dir/src/cube.c.i
-
-CMakeFiles/main.dir/src/cube.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/cube.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/samuel/Documents/cProgramming/glfwTesting/src/cube.c -o CMakeFiles/main.dir/src/cube.c.s
-
 CMakeFiles/main.dir/src/main.c.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/main.c.o: src/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/cProgramming/glfwTesting/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/main.dir/src/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/cProgramming/glfwTesting/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/main.dir/src/main.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/src/main.c.o   -c /home/samuel/Documents/cProgramming/glfwTesting/src/main.c
 
 CMakeFiles/main.dir/src/main.c.i: cmake_force
@@ -83,22 +70,100 @@ CMakeFiles/main.dir/src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/main.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/samuel/Documents/cProgramming/glfwTesting/src/main.c -o CMakeFiles/main.dir/src/main.c.s
 
-CMakeFiles/main.dir/src/vert.c.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/vert.c.o: src/vert.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/cProgramming/glfwTesting/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/main.dir/src/vert.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/src/vert.c.o   -c /home/samuel/Documents/cProgramming/glfwTesting/src/vert.c
+CMakeFiles/main.dir/src/pixel.c.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/pixel.c.o: src/pixel.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/cProgramming/glfwTesting/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/main.dir/src/pixel.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/src/pixel.c.o   -c /home/samuel/Documents/cProgramming/glfwTesting/src/pixel.c
 
-CMakeFiles/main.dir/src/vert.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/vert.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/samuel/Documents/cProgramming/glfwTesting/src/vert.c > CMakeFiles/main.dir/src/vert.c.i
+CMakeFiles/main.dir/src/pixel.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/pixel.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/samuel/Documents/cProgramming/glfwTesting/src/pixel.c > CMakeFiles/main.dir/src/pixel.c.i
 
-CMakeFiles/main.dir/src/vert.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/vert.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/samuel/Documents/cProgramming/glfwTesting/src/vert.c -o CMakeFiles/main.dir/src/vert.c.s
+CMakeFiles/main.dir/src/pixel.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/pixel.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/samuel/Documents/cProgramming/glfwTesting/src/pixel.c -o CMakeFiles/main.dir/src/pixel.c.s
+
+CMakeFiles/main.dir/src/processing/calc.c.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/processing/calc.c.o: src/processing/calc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/cProgramming/glfwTesting/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/main.dir/src/processing/calc.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/src/processing/calc.c.o   -c /home/samuel/Documents/cProgramming/glfwTesting/src/processing/calc.c
+
+CMakeFiles/main.dir/src/processing/calc.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/processing/calc.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/samuel/Documents/cProgramming/glfwTesting/src/processing/calc.c > CMakeFiles/main.dir/src/processing/calc.c.i
+
+CMakeFiles/main.dir/src/processing/calc.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/processing/calc.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/samuel/Documents/cProgramming/glfwTesting/src/processing/calc.c -o CMakeFiles/main.dir/src/processing/calc.c.s
+
+CMakeFiles/main.dir/src/processing/cube.c.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/processing/cube.c.o: src/processing/cube.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/cProgramming/glfwTesting/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/main.dir/src/processing/cube.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/src/processing/cube.c.o   -c /home/samuel/Documents/cProgramming/glfwTesting/src/processing/cube.c
+
+CMakeFiles/main.dir/src/processing/cube.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/processing/cube.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/samuel/Documents/cProgramming/glfwTesting/src/processing/cube.c > CMakeFiles/main.dir/src/processing/cube.c.i
+
+CMakeFiles/main.dir/src/processing/cube.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/processing/cube.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/samuel/Documents/cProgramming/glfwTesting/src/processing/cube.c -o CMakeFiles/main.dir/src/processing/cube.c.s
+
+CMakeFiles/main.dir/src/processing/dynamic_array.c.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/processing/dynamic_array.c.o: src/processing/dynamic_array.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/cProgramming/glfwTesting/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/main.dir/src/processing/dynamic_array.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/src/processing/dynamic_array.c.o   -c /home/samuel/Documents/cProgramming/glfwTesting/src/processing/dynamic_array.c
+
+CMakeFiles/main.dir/src/processing/dynamic_array.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/processing/dynamic_array.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/samuel/Documents/cProgramming/glfwTesting/src/processing/dynamic_array.c > CMakeFiles/main.dir/src/processing/dynamic_array.c.i
+
+CMakeFiles/main.dir/src/processing/dynamic_array.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/processing/dynamic_array.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/samuel/Documents/cProgramming/glfwTesting/src/processing/dynamic_array.c -o CMakeFiles/main.dir/src/processing/dynamic_array.c.s
+
+CMakeFiles/main.dir/src/processing/vert.c.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/processing/vert.c.o: src/processing/vert.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/cProgramming/glfwTesting/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/main.dir/src/processing/vert.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/src/processing/vert.c.o   -c /home/samuel/Documents/cProgramming/glfwTesting/src/processing/vert.c
+
+CMakeFiles/main.dir/src/processing/vert.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/processing/vert.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/samuel/Documents/cProgramming/glfwTesting/src/processing/vert.c > CMakeFiles/main.dir/src/processing/vert.c.i
+
+CMakeFiles/main.dir/src/processing/vert.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/processing/vert.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/samuel/Documents/cProgramming/glfwTesting/src/processing/vert.c -o CMakeFiles/main.dir/src/processing/vert.c.s
+
+CMakeFiles/main.dir/src/util/hashlist.c.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/util/hashlist.c.o: src/util/hashlist.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/cProgramming/glfwTesting/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/main.dir/src/util/hashlist.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/src/util/hashlist.c.o   -c /home/samuel/Documents/cProgramming/glfwTesting/src/util/hashlist.c
+
+CMakeFiles/main.dir/src/util/hashlist.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/util/hashlist.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/samuel/Documents/cProgramming/glfwTesting/src/util/hashlist.c > CMakeFiles/main.dir/src/util/hashlist.c.i
+
+CMakeFiles/main.dir/src/util/hashlist.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/util/hashlist.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/samuel/Documents/cProgramming/glfwTesting/src/util/hashlist.c -o CMakeFiles/main.dir/src/util/hashlist.c.s
+
+CMakeFiles/main.dir/src/util/list.c.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/util/list.c.o: src/util/list.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/cProgramming/glfwTesting/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/main.dir/src/util/list.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/src/util/list.c.o   -c /home/samuel/Documents/cProgramming/glfwTesting/src/util/list.c
+
+CMakeFiles/main.dir/src/util/list.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/util/list.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/samuel/Documents/cProgramming/glfwTesting/src/util/list.c > CMakeFiles/main.dir/src/util/list.c.i
+
+CMakeFiles/main.dir/src/util/list.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/util/list.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/samuel/Documents/cProgramming/glfwTesting/src/util/list.c -o CMakeFiles/main.dir/src/util/list.c.s
 
 CMakeFiles/main.dir/deps/glew/src/glew.c.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/deps/glew/src/glew.c.o: deps/glew/src/glew.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/cProgramming/glfwTesting/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/main.dir/deps/glew/src/glew.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/cProgramming/glfwTesting/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/main.dir/deps/glew/src/glew.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/deps/glew/src/glew.c.o   -c /home/samuel/Documents/cProgramming/glfwTesting/deps/glew/src/glew.c
 
 CMakeFiles/main.dir/deps/glew/src/glew.c.i: cmake_force
@@ -111,7 +176,7 @@ CMakeFiles/main.dir/deps/glew/src/glew.c.s: cmake_force
 
 CMakeFiles/main.dir/deps/lodepng/lodepng.c.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/deps/lodepng/lodepng.c.o: deps/lodepng/lodepng.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/cProgramming/glfwTesting/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/main.dir/deps/lodepng/lodepng.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/cProgramming/glfwTesting/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/main.dir/deps/lodepng/lodepng.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/deps/lodepng/lodepng.c.o   -c /home/samuel/Documents/cProgramming/glfwTesting/deps/lodepng/lodepng.c
 
 CMakeFiles/main.dir/deps/lodepng/lodepng.c.i: cmake_force
@@ -124,7 +189,7 @@ CMakeFiles/main.dir/deps/lodepng/lodepng.c.s: cmake_force
 
 CMakeFiles/main.dir/deps/noise/noise.c.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/deps/noise/noise.c.o: deps/noise/noise.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/cProgramming/glfwTesting/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/main.dir/deps/noise/noise.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/cProgramming/glfwTesting/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/main.dir/deps/noise/noise.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/deps/noise/noise.c.o   -c /home/samuel/Documents/cProgramming/glfwTesting/deps/noise/noise.c
 
 CMakeFiles/main.dir/deps/noise/noise.c.i: cmake_force
@@ -137,7 +202,7 @@ CMakeFiles/main.dir/deps/noise/noise.c.s: cmake_force
 
 CMakeFiles/main.dir/deps/sqlite/sqlite3.c.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/deps/sqlite/sqlite3.c.o: deps/sqlite/sqlite3.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/cProgramming/glfwTesting/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/main.dir/deps/sqlite/sqlite3.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/cProgramming/glfwTesting/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/main.dir/deps/sqlite/sqlite3.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/deps/sqlite/sqlite3.c.o   -c /home/samuel/Documents/cProgramming/glfwTesting/deps/sqlite/sqlite3.c
 
 CMakeFiles/main.dir/deps/sqlite/sqlite3.c.i: cmake_force
@@ -150,7 +215,7 @@ CMakeFiles/main.dir/deps/sqlite/sqlite3.c.s: cmake_force
 
 CMakeFiles/main.dir/deps/tinycthread/tinycthread.c.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/deps/tinycthread/tinycthread.c.o: deps/tinycthread/tinycthread.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/cProgramming/glfwTesting/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/main.dir/deps/tinycthread/tinycthread.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/cProgramming/glfwTesting/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/main.dir/deps/tinycthread/tinycthread.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/deps/tinycthread/tinycthread.c.o   -c /home/samuel/Documents/cProgramming/glfwTesting/deps/tinycthread/tinycthread.c
 
 CMakeFiles/main.dir/deps/tinycthread/tinycthread.c.i: cmake_force
@@ -163,9 +228,14 @@ CMakeFiles/main.dir/deps/tinycthread/tinycthread.c.s: cmake_force
 
 # Object files for target main
 main_OBJECTS = \
-"CMakeFiles/main.dir/src/cube.c.o" \
 "CMakeFiles/main.dir/src/main.c.o" \
-"CMakeFiles/main.dir/src/vert.c.o" \
+"CMakeFiles/main.dir/src/pixel.c.o" \
+"CMakeFiles/main.dir/src/processing/calc.c.o" \
+"CMakeFiles/main.dir/src/processing/cube.c.o" \
+"CMakeFiles/main.dir/src/processing/dynamic_array.c.o" \
+"CMakeFiles/main.dir/src/processing/vert.c.o" \
+"CMakeFiles/main.dir/src/util/hashlist.c.o" \
+"CMakeFiles/main.dir/src/util/list.c.o" \
 "CMakeFiles/main.dir/deps/glew/src/glew.c.o" \
 "CMakeFiles/main.dir/deps/lodepng/lodepng.c.o" \
 "CMakeFiles/main.dir/deps/noise/noise.c.o" \
@@ -175,9 +245,14 @@ main_OBJECTS = \
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
-main: CMakeFiles/main.dir/src/cube.c.o
 main: CMakeFiles/main.dir/src/main.c.o
-main: CMakeFiles/main.dir/src/vert.c.o
+main: CMakeFiles/main.dir/src/pixel.c.o
+main: CMakeFiles/main.dir/src/processing/calc.c.o
+main: CMakeFiles/main.dir/src/processing/cube.c.o
+main: CMakeFiles/main.dir/src/processing/dynamic_array.c.o
+main: CMakeFiles/main.dir/src/processing/vert.c.o
+main: CMakeFiles/main.dir/src/util/hashlist.c.o
+main: CMakeFiles/main.dir/src/util/list.c.o
 main: CMakeFiles/main.dir/deps/glew/src/glew.c.o
 main: CMakeFiles/main.dir/deps/lodepng/lodepng.c.o
 main: CMakeFiles/main.dir/deps/noise/noise.c.o
@@ -206,7 +281,7 @@ main: /usr/lib/x86_64-linux-gnu/libXcursor.so
 main: /usr/lib/x86_64-linux-gnu/libGL.so
 main: /usr/lib/x86_64-linux-gnu/libcurl.so
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/samuel/Documents/cProgramming/glfwTesting/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/samuel/Documents/cProgramming/glfwTesting/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking C executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

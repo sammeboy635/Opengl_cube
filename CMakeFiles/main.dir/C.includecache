@@ -6,9 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/samuel/Documents/cProgramming/glfwTesting/src/cube.h
-stdio.h
--
+/home/samuel/Documents/cProgramming/glfwTesting/src/config/config.h
 
 /home/samuel/Documents/cProgramming/glfwTesting/src/main.c
 GL/glew.h
@@ -19,16 +17,26 @@ unistd.h
 -
 stdlib.h
 -
-cube.h
-/home/samuel/Documents/cProgramming/glfwTesting/src/cube.h
-vert.h
-/home/samuel/Documents/cProgramming/glfwTesting/src/vert.h
+processing/cube.h
+/home/samuel/Documents/cProgramming/glfwTesting/src/processing/cube.h
+processing/vert.h
+/home/samuel/Documents/cProgramming/glfwTesting/src/processing/vert.h
+util/list.h
+/home/samuel/Documents/cProgramming/glfwTesting/src/util/list.h
+config/config.h
+/home/samuel/Documents/cProgramming/glfwTesting/src/config/config.h
 
-/home/samuel/Documents/cProgramming/glfwTesting/src/vert.h
+/home/samuel/Documents/cProgramming/glfwTesting/src/processing/cube.h
 stdio.h
 -
+
+/home/samuel/Documents/cProgramming/glfwTesting/src/processing/vert.h
 cube.h
-/home/samuel/Documents/cProgramming/glfwTesting/src/cube.h
+/home/samuel/Documents/cProgramming/glfwTesting/src/processing/cube.h
+stdio.h
+-
+
+/home/samuel/Documents/cProgramming/glfwTesting/src/util/list.h
 
 deps/glew/include/GL/glew.h
 stddef.h
