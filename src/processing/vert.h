@@ -6,15 +6,6 @@
 #include "dynamic_array.h"
 #include <stdio.h>
 
-typedef struct Array
-{
-	int *ptr;
-	int index;
-	int sizeOfArray;	  //size of array
-	int startSizeOfArray; //Starting size of Array;
-	float threshold;	  // Decimal(.1 to .9) place number to keep array from filling
-} Array;
-
 typedef struct Vert
 {
 
