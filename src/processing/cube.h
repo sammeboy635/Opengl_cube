@@ -4,21 +4,21 @@
 #define TICK(X) clock_t X = clock()
 #define TOCK(X) printf("\ntime %s: %f sec.\n", (#X), (double)(clock() - (X)) / CLOCKS_PER_SEC)
 #define cc_set(cx, cX, x) \
-    cx = x;               \
-    cX = x + 1;
+	cx = x;               \
+	cX = x + 1;
 
 static int blockSides[6][3] = {{0, 1, 0}, {0, -1, 0}, {-1, 0, 0}, {1, 0, 0}, {0, 0, 1}, {0, 0, -1}};
 
 typedef struct cubeCalc
 {
-    int x;
-    int y;
-    int z;
-    int X;
-    int Y;
-    int Z;
-    int offset;
-    int *ptr[6][12];
+	int x;
+	int y;
+	int z;
+	int X;
+	int Y;
+	int Z;
+	int offset;
+	int *ptr[6][12];
 } cubeCalc;
 
 cubeCalc *cube_init(int offset);

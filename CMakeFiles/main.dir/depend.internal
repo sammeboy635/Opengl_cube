@@ -19,39 +19,21 @@ CMakeFiles/main.dir/deps/tinycthread/tinycthread.c.o
 CMakeFiles/main.dir/src/main.c.o
  /Users/samuel/Documents/C/Opengl_cube/src/config/config.h
  /Users/samuel/Documents/C/Opengl_cube/src/main.c
+ /Users/samuel/Documents/C/Opengl_cube/src/main.h
  /Users/samuel/Documents/C/Opengl_cube/src/processing/cube.h
- /Users/samuel/Documents/C/Opengl_cube/src/processing/dynamic_array.h
- /Users/samuel/Documents/C/Opengl_cube/src/processing/vert.h
  /Users/samuel/Documents/C/Opengl_cube/src/util/list.h
+ /Users/samuel/Documents/C/Opengl_cube/src/util/screen.h
  deps/glew/include/GL/glew.h
  deps/glfw/include/GLFW/glfw3.h
-CMakeFiles/main.dir/src/pixel.c.o
- /Users/samuel/Documents/C/Opengl_cube/src/pixel.c
- /Users/samuel/Documents/C/Opengl_cube/src/pixel.h
-CMakeFiles/main.dir/src/processing/calc.c.o
- /Users/samuel/Documents/C/Opengl_cube/src/config/config.h
- /Users/samuel/Documents/C/Opengl_cube/src/processing/calc.c
- /Users/samuel/Documents/C/Opengl_cube/src/processing/calc.h
- /Users/samuel/Documents/C/Opengl_cube/src/processing/cube.h
- /Users/samuel/Documents/C/Opengl_cube/src/processing/dynamic_array.h
- /Users/samuel/Documents/C/Opengl_cube/src/processing/vert.h
- /Users/samuel/Documents/C/Opengl_cube/src/util/list.h
 CMakeFiles/main.dir/src/processing/cube.c.o
  /Users/samuel/Documents/C/Opengl_cube/src/processing/cube.c
  /Users/samuel/Documents/C/Opengl_cube/src/processing/cube.h
-CMakeFiles/main.dir/src/processing/dynamic_array.c.o
- /Users/samuel/Documents/C/Opengl_cube/src/processing/dynamic_array.c
- /Users/samuel/Documents/C/Opengl_cube/src/processing/dynamic_array.h
-CMakeFiles/main.dir/src/processing/vert.c.o
- /Users/samuel/Documents/C/Opengl_cube/src/config/config.h
- /Users/samuel/Documents/C/Opengl_cube/src/processing/cube.h
- /Users/samuel/Documents/C/Opengl_cube/src/processing/dynamic_array.h
- /Users/samuel/Documents/C/Opengl_cube/src/processing/vert.c
- /Users/samuel/Documents/C/Opengl_cube/src/processing/vert.h
- /Users/samuel/Documents/C/Opengl_cube/src/util/list.h
-CMakeFiles/main.dir/src/util/hashlist.c.o
- /Users/samuel/Documents/C/Opengl_cube/src/util/hashlist.c
- /Users/samuel/Documents/C/Opengl_cube/src/util/hashlist.h
 CMakeFiles/main.dir/src/util/list.c.o
  /Users/samuel/Documents/C/Opengl_cube/src/util/list.c
  /Users/samuel/Documents/C/Opengl_cube/src/util/list.h
+CMakeFiles/main.dir/src/util/screen.c.o
+ /Users/samuel/Documents/C/Opengl_cube/src/config/config.h
+ /Users/samuel/Documents/C/Opengl_cube/src/processing/cube.h
+ /Users/samuel/Documents/C/Opengl_cube/src/util/list.h
+ /Users/samuel/Documents/C/Opengl_cube/src/util/screen.c
+ /Users/samuel/Documents/C/Opengl_cube/src/util/screen.h

@@ -1,21 +1,16 @@
-#ifndef HASHLIST_H
-#define HASHLIST_H
-
+#pragma once
 typedef struct List
 {
-    struct list *next;
-    void *ptr;
+	void *ptr;
+	struct List *next;
 } List;
-
-typedef struct t_list
+typedef struct Tlist
 {
-    List *head;
-    List *tail;
-    int size;
-} t_list;
+	List *head;
+	List *tail;
+} Tlist;
 
-t_list *list_init();
-void list_add(t_list *tlist, void *ptr);
-void list_remove(t_list *tlist, int index);
-
-#endif
+Tlist *list_init();
+void list_add(Tlist *list, void *ptr);
+void list_dequeue(Tlist *list, void *mptr, void (*deque)(void *mptr, void *ptr));
+void list_traverse(Tlist *list, void *mptr, void (*trav)(void *mptr, void *ptr));

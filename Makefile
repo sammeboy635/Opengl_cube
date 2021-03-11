@@ -675,60 +675,6 @@ src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.c.s
 .PHONY : src/main.c.s
 
-src/pixel.o: src/pixel.c.o
-
-.PHONY : src/pixel.o
-
-# target to build an object file
-src/pixel.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/pixel.c.o
-.PHONY : src/pixel.c.o
-
-src/pixel.i: src/pixel.c.i
-
-.PHONY : src/pixel.i
-
-# target to preprocess a source file
-src/pixel.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/pixel.c.i
-.PHONY : src/pixel.c.i
-
-src/pixel.s: src/pixel.c.s
-
-.PHONY : src/pixel.s
-
-# target to generate assembly for a file
-src/pixel.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/pixel.c.s
-.PHONY : src/pixel.c.s
-
-src/processing/calc.o: src/processing/calc.c.o
-
-.PHONY : src/processing/calc.o
-
-# target to build an object file
-src/processing/calc.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/processing/calc.c.o
-.PHONY : src/processing/calc.c.o
-
-src/processing/calc.i: src/processing/calc.c.i
-
-.PHONY : src/processing/calc.i
-
-# target to preprocess a source file
-src/processing/calc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/processing/calc.c.i
-.PHONY : src/processing/calc.c.i
-
-src/processing/calc.s: src/processing/calc.c.s
-
-.PHONY : src/processing/calc.s
-
-# target to generate assembly for a file
-src/processing/calc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/processing/calc.c.s
-.PHONY : src/processing/calc.c.s
-
 src/processing/cube.o: src/processing/cube.c.o
 
 .PHONY : src/processing/cube.o
@@ -756,87 +702,6 @@ src/processing/cube.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/processing/cube.c.s
 .PHONY : src/processing/cube.c.s
 
-src/processing/dynamic_array.o: src/processing/dynamic_array.c.o
-
-.PHONY : src/processing/dynamic_array.o
-
-# target to build an object file
-src/processing/dynamic_array.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/processing/dynamic_array.c.o
-.PHONY : src/processing/dynamic_array.c.o
-
-src/processing/dynamic_array.i: src/processing/dynamic_array.c.i
-
-.PHONY : src/processing/dynamic_array.i
-
-# target to preprocess a source file
-src/processing/dynamic_array.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/processing/dynamic_array.c.i
-.PHONY : src/processing/dynamic_array.c.i
-
-src/processing/dynamic_array.s: src/processing/dynamic_array.c.s
-
-.PHONY : src/processing/dynamic_array.s
-
-# target to generate assembly for a file
-src/processing/dynamic_array.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/processing/dynamic_array.c.s
-.PHONY : src/processing/dynamic_array.c.s
-
-src/processing/vert.o: src/processing/vert.c.o
-
-.PHONY : src/processing/vert.o
-
-# target to build an object file
-src/processing/vert.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/processing/vert.c.o
-.PHONY : src/processing/vert.c.o
-
-src/processing/vert.i: src/processing/vert.c.i
-
-.PHONY : src/processing/vert.i
-
-# target to preprocess a source file
-src/processing/vert.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/processing/vert.c.i
-.PHONY : src/processing/vert.c.i
-
-src/processing/vert.s: src/processing/vert.c.s
-
-.PHONY : src/processing/vert.s
-
-# target to generate assembly for a file
-src/processing/vert.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/processing/vert.c.s
-.PHONY : src/processing/vert.c.s
-
-src/util/hashlist.o: src/util/hashlist.c.o
-
-.PHONY : src/util/hashlist.o
-
-# target to build an object file
-src/util/hashlist.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/util/hashlist.c.o
-.PHONY : src/util/hashlist.c.o
-
-src/util/hashlist.i: src/util/hashlist.c.i
-
-.PHONY : src/util/hashlist.i
-
-# target to preprocess a source file
-src/util/hashlist.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/util/hashlist.c.i
-.PHONY : src/util/hashlist.c.i
-
-src/util/hashlist.s: src/util/hashlist.c.s
-
-.PHONY : src/util/hashlist.s
-
-# target to generate assembly for a file
-src/util/hashlist.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/util/hashlist.c.s
-.PHONY : src/util/hashlist.c.s
-
 src/util/list.o: src/util/list.c.o
 
 .PHONY : src/util/list.o
@@ -863,6 +728,33 @@ src/util/list.s: src/util/list.c.s
 src/util/list.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/util/list.c.s
 .PHONY : src/util/list.c.s
+
+src/util/screen.o: src/util/screen.c.o
+
+.PHONY : src/util/screen.o
+
+# target to build an object file
+src/util/screen.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/util/screen.c.o
+.PHONY : src/util/screen.c.o
+
+src/util/screen.i: src/util/screen.c.i
+
+.PHONY : src/util/screen.i
+
+# target to preprocess a source file
+src/util/screen.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/util/screen.c.i
+.PHONY : src/util/screen.c.i
+
+src/util/screen.s: src/util/screen.c.s
+
+.PHONY : src/util/screen.s
+
+# target to generate assembly for a file
+src/util/screen.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/util/screen.c.s
+.PHONY : src/util/screen.c.s
 
 # Help Target
 help:
@@ -920,27 +812,15 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/pixel.o"
-	@echo "... src/pixel.i"
-	@echo "... src/pixel.s"
-	@echo "... src/processing/calc.o"
-	@echo "... src/processing/calc.i"
-	@echo "... src/processing/calc.s"
 	@echo "... src/processing/cube.o"
 	@echo "... src/processing/cube.i"
 	@echo "... src/processing/cube.s"
-	@echo "... src/processing/dynamic_array.o"
-	@echo "... src/processing/dynamic_array.i"
-	@echo "... src/processing/dynamic_array.s"
-	@echo "... src/processing/vert.o"
-	@echo "... src/processing/vert.i"
-	@echo "... src/processing/vert.s"
-	@echo "... src/util/hashlist.o"
-	@echo "... src/util/hashlist.i"
-	@echo "... src/util/hashlist.s"
 	@echo "... src/util/list.o"
 	@echo "... src/util/list.i"
 	@echo "... src/util/list.s"
+	@echo "... src/util/screen.o"
+	@echo "... src/util/screen.i"
+	@echo "... src/util/screen.s"
 .PHONY : help
 
 

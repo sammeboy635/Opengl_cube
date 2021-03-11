@@ -1,47 +1,48 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include "list.h"
 
-t_list *list_init()
+Tlist *list_init()
 {
-	t_list *list = (t_list *)malloc(sizeof(t_list));
-	list->head = NULL;
-	list->tail = NULL;
-
-	return list;
+	Tlist *self = (Tlist *)malloc(sizeof(Tlist));
+	self->head = NULL;
+	self->tail = NULL;
+	return self;
 }
-
-void list_add(t_list *tlist, void *ptr)
+void list_add(Tlist *list, void *ptr)
 {
 	List *current = (List *)malloc(sizeof(List));
 	current->ptr = ptr;
 	current->next = NULL;
-	tlist->size++;
 
-	if (tlist->tail == NULL)
+	if (list->head == NULL)
 	{
-		tlist->head = current;
-		tlist->tail = current;
+		list->head = current;
+		list->tail = current;
 		return;
 	}
 
-	tlist->tail->next = current;
-	tlist->tail = current;
+	list->tail->next = current;
+	list->tail = current;
 }
-
-void list_remove(t_list *tlist, int index)
+void list_dequeue(Tlist *list, void *mptr, void (*deque)(void *mptr, void *ptr))
 {
-	List *current = tlist->head;
+	if (list->tail == NULL)
+		return;
 
-	for (int i = 1; i < index; i++)
+	deque(mptr, list->tail->ptr);
+	free(list->tail->ptr);
+	free(list->tail);
+}
+void list_traverse(Tlist *list, void *mptr, void (*trav)(void *mptr, void *ptr))
+{
+	if (list->head != NULL)
+		return;
+
+	List *current = list->head;
+	while (current != NULL)
 	{
+		trav(mptr, current->ptr);
 		current = current->next;
 	}
-
-	if (tlist->head == current)
-	{
-		tlist->head = tlist->head->next;
-	}
-
-	free(current);
 }

@@ -10,13 +10,9 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/samuel/Documents/C/Opengl_cube/deps/sqlite/sqlite3.c" "/Users/samuel/Documents/C/Opengl_cube/CMakeFiles/main.dir/deps/sqlite/sqlite3.c.o"
   "/Users/samuel/Documents/C/Opengl_cube/deps/tinycthread/tinycthread.c" "/Users/samuel/Documents/C/Opengl_cube/CMakeFiles/main.dir/deps/tinycthread/tinycthread.c.o"
   "/Users/samuel/Documents/C/Opengl_cube/src/main.c" "/Users/samuel/Documents/C/Opengl_cube/CMakeFiles/main.dir/src/main.c.o"
-  "/Users/samuel/Documents/C/Opengl_cube/src/pixel.c" "/Users/samuel/Documents/C/Opengl_cube/CMakeFiles/main.dir/src/pixel.c.o"
-  "/Users/samuel/Documents/C/Opengl_cube/src/processing/calc.c" "/Users/samuel/Documents/C/Opengl_cube/CMakeFiles/main.dir/src/processing/calc.c.o"
   "/Users/samuel/Documents/C/Opengl_cube/src/processing/cube.c" "/Users/samuel/Documents/C/Opengl_cube/CMakeFiles/main.dir/src/processing/cube.c.o"
-  "/Users/samuel/Documents/C/Opengl_cube/src/processing/dynamic_array.c" "/Users/samuel/Documents/C/Opengl_cube/CMakeFiles/main.dir/src/processing/dynamic_array.c.o"
-  "/Users/samuel/Documents/C/Opengl_cube/src/processing/vert.c" "/Users/samuel/Documents/C/Opengl_cube/CMakeFiles/main.dir/src/processing/vert.c.o"
-  "/Users/samuel/Documents/C/Opengl_cube/src/util/hashlist.c" "/Users/samuel/Documents/C/Opengl_cube/CMakeFiles/main.dir/src/util/hashlist.c.o"
   "/Users/samuel/Documents/C/Opengl_cube/src/util/list.c" "/Users/samuel/Documents/C/Opengl_cube/CMakeFiles/main.dir/src/util/list.c.o"
+  "/Users/samuel/Documents/C/Opengl_cube/src/util/screen.c" "/Users/samuel/Documents/C/Opengl_cube/CMakeFiles/main.dir/src/util/screen.c.o"
   )
 set(CMAKE_C_COMPILER_ID "Clang")
 
