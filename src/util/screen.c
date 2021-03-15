@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <errno.h>
 #include "screen.h"
 #include "list.h"
 //#include "../main.h"
@@ -42,13 +43,28 @@ void screen_process_list()
 	if (current == NULL)
 		return;
 
-	List *last = current;
+	List *last = NULL;
 
 	while (current != NULL)
 	{
 		if (screen_process(current->ptr) == 0)
 		{
-			if (scr->proccessQue->head == current)
+			if (scr->proccessQue->tail == current & scr->proccessQue->head == current)
+			{
+				scr->proccessQue->tail = NULL;
+				scr->proccessQue->head = NULL;
+				free(current->ptr);
+				free(current);
+				return;
+			}
+			else if (scr->proccessQue->head == current)
+			{
+				scr->proccessQue->tail = last;
+				free(current->ptr);
+				free(current);
+				return;
+			}
+			else if (scr->proccessQue->head == current)
 			{
 				scr->proccessQue->head = current->next;
 				last = current;
@@ -56,24 +72,25 @@ void screen_process_list()
 				free(last->ptr);
 				free(last);
 			}
-			else if (scr->proccessQue->head == current)
-			{
-				scr->proccessQue->tail = last;
-				free(current->ptr);
-				free(current);
-				current = NULL;
-			}
 		}
+		last = current;
+		current = current->next;
 	}
 }
 int screen_process(void *ptr)
 {
-
+	if (ptr == NULL)
+		return;
 	Pixel *pix = (Pixel *)ptr;
 
 	if (pix->y < 1)
 		return FALSE;
 
+	if (pix->y > SCREEN_HEIGHT | pix->x > SCREEN_WIDTH) //debugging
+	{
+		puts("error");
+		return;
+	}
 	int xx = pix->x / CUBE_SIZE;
 	int yy = pix->y / CUBE_SIZE;
 
@@ -109,6 +126,9 @@ void screen_free()
 Pixel *pix_init(int x, int y)
 {
 	Pixel *self = (Pixel *)malloc(sizeof(Pixel));
+	if (self == NULL | x > SCREEN_WIDTH | y > SCREEN_HEIGHT) // debugging
+		perror("pix_init");
+
 	self->x = x;
 	self->y = y;
 	return self;

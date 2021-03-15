@@ -17,6 +17,7 @@ int main(void)
 	{
 		window_main_loop();
 		screen_process_list();
+		//window_timed_events();
 	}
 	window_terminate();
 }
@@ -75,7 +76,7 @@ GLFWwindow *window_create_GLFW()
 void window_timed_events()
 {
 	float now = glfwGetTime();
-	if (now - w->lastTime > 2.0f)
+	if (now - w->lastTime > .5f)
 	{
 		screen_process_list();
 		w->lastTime = now;
@@ -97,8 +98,8 @@ void window_main_loop()
 	glfwSwapBuffers(w->window);
 
 	// Poll for and process events
-	//glfwPollEvents();
-	glfwWaitEvents();
+	glfwPollEvents();
+	//glfwWaitEvents();
 }
 void window_draw_cubes(int totalCubes, int *arrayVertices)
 {
@@ -128,6 +129,10 @@ void window_keyboard_controls(GLFWwindow *window, int key, int scancode, int act
 	if (action == GLFW_PRESS | action == GLFW_REPEAT)
 		if (key == GLFW_KEY_ESCAPE)
 			glfwSetWindowShouldClose(window, GL_TRUE);
+	if (glfwGetKey(window, GLFW_MOUSE_BUTTON_LEFT))
+	{
+		screen_add_sqaure(w->mpos.x, w->mpos.y);
+	}
 	if (glfwGetKey(window, GLFW_KEY_W))
 	{
 		if (w->player.y < SCREEN_H)
@@ -178,7 +183,8 @@ void window_keyboard_controls(GLFWwindow *window, int key, int scancode, int act
 	{
 		char debug[100];
 		//glfwGetCursorPos(window, &px, &py);
-		sprintf(debug, "%d", w->mpos.y);
+
+		sprintf(debug, "%d", w->scr->vertIndex);
 		puts(debug);
 	}
 }
