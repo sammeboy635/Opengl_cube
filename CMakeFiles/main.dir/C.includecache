@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/samuel/Documents/cProgramming/glfwTesting/src/config/config.h
+/Users/samuel/Documents/C/Opengl_cube/src/config/config.h
 
-/home/samuel/Documents/cProgramming/glfwTesting/src/main.c
+/Users/samuel/Documents/C/Opengl_cube/src/main.c
 GL/glew.h
 -
 GLFW/glfw3.h
@@ -18,14 +18,15 @@ unistd.h
 stdlib.h
 -
 processing/cube.h
-/home/samuel/Documents/cProgramming/glfwTesting/src/processing/cube.h
+/Users/samuel/Documents/C/Opengl_cube/src/processing/cube.h
 processing/vert.h
-/home/samuel/Documents/cProgramming/glfwTesting/src/processing/vert.h
+/Users/samuel/Documents/C/Opengl_cube/src/processing/vert.h
 util/list.h
-/home/samuel/Documents/cProgramming/glfwTesting/src/util/list.h
+/Users/samuel/Documents/C/Opengl_cube/src/util/list.h
 config/config.h
-/home/samuel/Documents/cProgramming/glfwTesting/src/config/config.h
+/Users/samuel/Documents/C/Opengl_cube/src/config/config.h
 
+<<<<<<< HEAD
 /home/samuel/Documents/cProgramming/glfwTesting/src/processing/calc.c
 stdio.h
 -
@@ -45,9 +46,47 @@ vert.h
 /home/samuel/Documents/cProgramming/glfwTesting/src/processing/vert.h
 
 /home/samuel/Documents/cProgramming/glfwTesting/src/processing/cube.h
+=======
+/Users/samuel/Documents/C/Opengl_cube/src/processing/calc.c
+>>>>>>> d487245de6682188a792d6d7da08c77f7841d972
+stdio.h
+-
+stdlib.h
+-
+calc.h
+/Users/samuel/Documents/C/Opengl_cube/src/processing/calc.h
+../util/list.h
+/Users/samuel/Documents/C/Opengl_cube/src/util/list.h
+vert.h
+/Users/samuel/Documents/C/Opengl_cube/src/processing/vert.h
+../config/config.h
+/Users/samuel/Documents/C/Opengl_cube/src/config/config.h
+
+/Users/samuel/Documents/C/Opengl_cube/src/processing/calc.h
+vert.h
+/Users/samuel/Documents/C/Opengl_cube/src/processing/vert.h
+
+/Users/samuel/Documents/C/Opengl_cube/src/processing/cube.h
 stdio.h
 -
 
+/Users/samuel/Documents/C/Opengl_cube/src/processing/dynamic_array.h
+stdlib.h
+-
+
+/Users/samuel/Documents/C/Opengl_cube/src/processing/vert.c
+stdio.h
+-
+stdlib.h
+-
+vert.h
+/Users/samuel/Documents/C/Opengl_cube/src/processing/vert.h
+../config/config.h
+/Users/samuel/Documents/C/Opengl_cube/src/config/config.h
+../util/list.h
+/Users/samuel/Documents/C/Opengl_cube/src/util/list.h
+
+<<<<<<< HEAD
 /home/samuel/Documents/cProgramming/glfwTesting/src/processing/dynamic_array.c
 stdio.h
 -
@@ -77,10 +116,17 @@ cube.h
 /home/samuel/Documents/cProgramming/glfwTesting/src/processing/cube.h
 dynamic_array.h
 /home/samuel/Documents/cProgramming/glfwTesting/src/processing/dynamic_array.h
+=======
+/Users/samuel/Documents/C/Opengl_cube/src/processing/vert.h
+cube.h
+/Users/samuel/Documents/C/Opengl_cube/src/processing/cube.h
+dynamic_array.h
+/Users/samuel/Documents/C/Opengl_cube/src/processing/dynamic_array.h
+>>>>>>> d487245de6682188a792d6d7da08c77f7841d972
 stdio.h
 -
 
-/home/samuel/Documents/cProgramming/glfwTesting/src/util/list.h
+/Users/samuel/Documents/C/Opengl_cube/src/util/list.h
 
 deps/glew/include/GL/glew.h
 stddef.h

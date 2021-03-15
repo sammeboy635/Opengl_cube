@@ -3,12 +3,12 @@
 
 typedef struct Dynamic_Array
 {
-    void *ptr;
-    int indexOfArray;
-    int sizeOfVar;
-    int sizeOfArray;
-    int startSizeOfArray;
-    int sizeOfEndSpace;
+	void *ptr;
+	int indexOfArray;
+	int sizeOfVar;
+	int sizeOfArray;
+	int startSizeOfArray;
+	int sizeOfEndSpace;
 
 } Dynamic_Array;
 
