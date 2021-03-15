@@ -26,12 +26,12 @@ typedef struct Window //Main storage for all vars
 	//t_list memory;
 	Player player;
 	Screen *scr;
+	float lastTime;
 } Window;
 
-extern Window *w;
-
-void window_init();																			 //Main window init
-GLFWwindow *window_create_GLFW();															 // Sets all the callbacks and variables for glfw.
+void window_init(); //Main window init
+GLFWwindow *window_create_GLFW();
+void window_timed_events();																	 // Sets all the callbacks and variables for glfw.
 void window_main_loop();																	 //Display loop meant to be in a while loop
 void window_draw_cubes(int totalCubes, int *arrayVertices);									 //Drawcall
 void window_mouse_input(GLFWwindow *win, double xpos, double ypos);							 //mouseinput that outputs clamped positions

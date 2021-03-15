@@ -7,7 +7,7 @@
 #include "util/screen.h"
 #include "main.h"
 
-//Window *w; //Global storage var
+Window *w; //Global storage var
 
 int main(void)
 {
@@ -16,7 +16,7 @@ int main(void)
 	while (!glfwWindowShouldClose(w->window))
 	{
 		window_main_loop();
-		//screen_process_list();
+		screen_process_list();
 	}
 	window_terminate();
 }
@@ -71,6 +71,15 @@ GLFWwindow *window_create_GLFW()
 	glfwSetKeyCallback(window, window_keyboard_controls);	 //Keyboard keycall back
 	glfwSetWindowSizeCallback(window, window_size_callback); //Window Size call back
 	return window;
+}
+void window_timed_events()
+{
+	float now = glfwGetTime();
+	if (now - w->lastTime > 2.0f)
+	{
+		screen_process_list();
+		w->lastTime = now;
+	}
 }
 void window_main_loop()
 {

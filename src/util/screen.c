@@ -28,7 +28,7 @@ void screen_add_sqaure(int x, int y)
 	if (scr->screen[xx][yy] == -1)
 	{
 		scr->screen[xx][yy] = scr->vertIndex;
-		//list_add(scr->proccessQue, pix_init(x, y));
+		list_add(scr->proccessQue, pix_init(x, y));
 
 		cube_set_xyz(scr->cc, x, y, ZZ);
 		cube_vert_cpy(scr->cc, 4, scr->verts, &scr->vertIndex);
@@ -64,11 +64,6 @@ void screen_process_list()
 				current = NULL;
 			}
 		}
-		else
-		{
-			last = current;
-			current = current->next;
-		}
 	}
 }
 int screen_process(void *ptr)
@@ -79,16 +74,20 @@ int screen_process(void *ptr)
 	if (pix->y < 1)
 		return FALSE;
 
-	int index = scr->screen[pix->x][pix->y - 1];
+	int xx = pix->x / CUBE_SIZE;
+	int yy = pix->y / CUBE_SIZE;
+
+	int index = scr->screen[xx][yy - 1];
 
 	if (index != -1)
 		return FALSE;
 
-	index = scr->screen[pix->x][pix->y];
-	scr->screen[pix->x][pix->y] = -1;
-	scr->screen[pix->x][pix->y] = index;
+	index = scr->screen[xx][yy];
+	scr->screen[xx][yy] = -1;
+	scr->screen[xx][yy - 1] = index;
+	pix->y -= CUBE_SIZE;
 
-	cube_set_xyz(scr->cc, pix->x, pix->y - 1, ZZ);
+	cube_set_xyz(scr->cc, pix->x, pix->y, ZZ);
 	cube_vert_cpy(scr->cc, 4, scr->verts, &index);
 	return TRUE;
 }
