@@ -1,9 +1,9 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#define SCREEN_WIDTH 1080
+#define SCREEN_WIDTH 1920
 #define SCREEN_W 1030
-#define SCREEN_HEIGHT 720
+#define SCREEN_HEIGHT 1080
 #define SCREEN_H 665
 #define Move_Speed 10
 #define CUBE_SIZE 5

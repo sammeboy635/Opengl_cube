@@ -20,6 +20,7 @@ cubeCalc *cube_init(int offset)
     cc->Z = offset;
 
     cube_ptr_set(cc);
+
     return cc;
 }
 

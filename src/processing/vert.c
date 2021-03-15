@@ -9,8 +9,8 @@ Vert *vert_init(int cubeSize)
     Vert *self = malloc(sizeof(Vert));
     self->vertices = (int *)calloc(VERT_INIT_SIZE, sizeof(int));
     //self->xyz = (int *)calloc(VERT_INIT_SIZE, sizeof(int));
-    dyn_init(self->indexs)
-        self->index = 0;
+    //dyn_init(self->indexs);
+    self->index = 0;
     self->size = VERT_INIT_SIZE;
     self->total = 0;
     self->cc = cube_init(cubeSize);

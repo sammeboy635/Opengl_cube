@@ -12,6 +12,6 @@ typedef struct Dynamic_Array
 
 } Dynamic_Array;
 
-Dynamic_Array *dyn_init(int sizeOfVar, int sizeOfArray, int sizeOfEndSpace);
+void dyn_init(Dynamic_Array self, void *ptr, int sizeOfVar, int sizeOfArray, int sizeOfEndSpace);
 void dyn_realloc(Dynamic_Array *arr);
 void dyn_clear(Dynamic_Array *arr);
