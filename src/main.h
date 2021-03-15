@@ -28,6 +28,8 @@ typedef struct Window //Main storage for all vars
 	Screen *scr;
 } Window;
 
+extern Window *w;
+
 void window_init();																			 //Main window init
 GLFWwindow *window_create_GLFW();															 // Sets all the callbacks and variables for glfw.
 void window_main_loop();																	 //Display loop meant to be in a while loop

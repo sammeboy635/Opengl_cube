@@ -18,8 +18,12 @@ typedef struct Screen
 	cubeCalc *cc;
 } Screen;
 
+extern Screen *scr;
+
 Screen *screen_init();
-void screen_add_sqaure(Screen *scr, int x, int y);
-void screen_clear(Screen *scr);
-void screen_free(Screen *scr);
-Pixel *pixel_init(int x, int y);
+void screen_add_sqaure(int x, int y);
+void screen_process_list();
+int screen_process(void *ptr);
+void screen_clear();
+void screen_free();
+Pixel *pix_init(int x, int y);

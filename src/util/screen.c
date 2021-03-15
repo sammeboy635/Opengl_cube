@@ -2,10 +2,12 @@
 #include <stdlib.h>
 #include "screen.h"
 #include "list.h"
-
+//#include "../main.h"
+Screen *scr;
 Screen *screen_init()
 {
-	Screen *scr = (Screen *)malloc(sizeof(Screen));
+	//Screen *scr = (Screen *)malloc(sizeof(Screen));
+	scr = (Screen *)malloc(sizeof(Screen));
 	scr->cc = cube_init(CUBE_SIZE);
 
 	for (int x = 0; x < SCREEN_ARRAY_WIDTH; x++)
@@ -19,45 +21,78 @@ Screen *screen_init()
 	return scr;
 }
 
-void screen_add_sqaure(Screen *scr, int x, int y)
+void screen_add_sqaure(int x, int y)
 {
 	int xx = x / CUBE_SIZE;
 	int yy = y / CUBE_SIZE;
 	if (scr->screen[xx][yy] == -1)
 	{
 		scr->screen[xx][yy] = scr->vertIndex;
-		list_add(scr->proccessQue, (void *)pixel_init(x, y));
+		//list_add(scr->proccessQue, pix_init(x, y));
+
 		cube_set_xyz(scr->cc, x, y, ZZ);
 		cube_vert_cpy(scr->cc, 4, scr->verts, &scr->vertIndex);
 		scr->totalQuads += 4;
 	}
 }
 
-void screen_process(Screen *scr)
+void screen_process_list()
 {
-	if (scr->proccessQue->head == NULL)
-	{
-		return;
-	}
-	int index;
-	Pixel *pixel;
 	List *current = scr->proccessQue->head;
-	List *next = current->next;
+	if (current == NULL)
+		return;
+
+	List *last = current;
+
 	while (current != NULL)
 	{
-		pixel = (Pixel *)current->ptr;
-		index = scr->screen[pixel->x][pixel->y];
-
-		if (scr->screen[pixel->x][pixel->y - 1] != -1)
+		if (screen_process(current->ptr) == 0)
 		{
-			scr->screen[pixel->x][pixel->y] = -1;
-			pixel->y -= 1;
-			cube_set_xyz(scr->cc, pixel->x, pixel->y, ZZ);
-			cube_vert_cpy(scr->cc, 4, scr->verts, &index);
+			if (scr->proccessQue->head == current)
+			{
+				scr->proccessQue->head = current->next;
+				last = current;
+				current = current->next;
+				free(last->ptr);
+				free(last);
+			}
+			else if (scr->proccessQue->head == current)
+			{
+				scr->proccessQue->tail = last;
+				free(current->ptr);
+				free(current);
+				current = NULL;
+			}
+		}
+		else
+		{
+			last = current;
+			current = current->next;
 		}
 	}
 }
-void screen_clear(Screen *scr)
+int screen_process(void *ptr)
+{
+
+	Pixel *pix = (Pixel *)ptr;
+
+	if (pix->y < 1)
+		return FALSE;
+
+	int index = scr->screen[pix->x][pix->y - 1];
+
+	if (index != -1)
+		return FALSE;
+
+	index = scr->screen[pix->x][pix->y];
+	scr->screen[pix->x][pix->y] = -1;
+	scr->screen[pix->x][pix->y] = index;
+
+	cube_set_xyz(scr->cc, pix->x, pix->y - 1, ZZ);
+	cube_vert_cpy(scr->cc, 4, scr->verts, &index);
+	return TRUE;
+}
+void screen_clear()
 {
 	for (int x = 0; x < SCREEN_ARRAY_WIDTH; x++)
 		for (int y = 0; y < SCREEN_ARRAY_HEIGHT; y++)
@@ -66,15 +101,13 @@ void screen_clear(Screen *scr)
 	scr->totalQuads = 0;
 	//list_free_all(scr->proccessQue);
 }
-void screen_free(Screen *scr)
+void screen_free()
 {
 	free(scr->verts);
 	free(scr);
 }
-void screen_process_list(void *mptr, void *ptr)
-{
-}
-Pixel *pixel_init(int x, int y)
+
+Pixel *pix_init(int x, int y)
 {
 	Pixel *self = (Pixel *)malloc(sizeof(Pixel));
 	self->x = x;

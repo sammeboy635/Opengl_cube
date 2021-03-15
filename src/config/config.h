@@ -1,5 +1,7 @@
 #pragma one
 
+#define TRUE 1
+#define FALSE 0
 #define SIZE_OF_INT 4
 
 #define CUBE_SIZE 5 //Make sure this divids the screen height evenly

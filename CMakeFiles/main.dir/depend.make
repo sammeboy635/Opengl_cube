@@ -28,6 +28,7 @@ CMakeFiles/main.dir/src/main.c.o: deps/glfw/include/GLFW/glfw3.h
 CMakeFiles/main.dir/src/processing/cube.c.o: src/processing/cube.c
 CMakeFiles/main.dir/src/processing/cube.c.o: src/processing/cube.h
 
+CMakeFiles/main.dir/src/util/list.c.o: src/config/config.h
 CMakeFiles/main.dir/src/util/list.c.o: src/util/list.c
 CMakeFiles/main.dir/src/util/list.c.o: src/util/list.h
 

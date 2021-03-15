@@ -12,5 +12,5 @@ typedef struct Tlist
 
 Tlist *list_init();
 void list_add(Tlist *list, void *ptr);
-void list_dequeue(Tlist *list, void *mptr, void (*deque)(void *mptr, void *ptr));
+void list_dequeue(Tlist *list, int (*deque)(void *ptr));
 void list_traverse(Tlist *list, void *mptr, void (*trav)(void *mptr, void *ptr));

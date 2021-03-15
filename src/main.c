@@ -1,6 +1,3 @@
-
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
 #include <unistd.h>
 #include <stdlib.h>
 
@@ -10,7 +7,7 @@
 #include "util/screen.h"
 #include "main.h"
 
-Window *w; //Global storage var
+//Window *w; //Global storage var
 
 int main(void)
 {
@@ -19,6 +16,7 @@ int main(void)
 	while (!glfwWindowShouldClose(w->window))
 	{
 		window_main_loop();
+		//screen_process_list();
 	}
 	window_terminate();
 }
@@ -144,11 +142,11 @@ void window_keyboard_controls(GLFWwindow *window, int key, int scancode, int act
 	if (glfwGetKey(window, GLFW_KEY_SPACE))
 	{
 
-		screen_add_sqaure(w->scr, w->mpos.x, w->mpos.y);
+		screen_add_sqaure(w->mpos.x, w->mpos.y);
 	}
 	if (glfwGetKey(window, GLFW_KEY_1))
 	{
-		screen_clear(w->scr);
+		screen_clear();
 		w->scr->totalQuads = 0;
 	}
 	if (glfwGetKey(window, GLFW_KEY_2))
