@@ -8,15 +8,25 @@
 #include "main.h"
 
 Window *w; //Global storage var
+int dir;
 
 int main(void)
 {
-
+	dir = -1;
 	window_init(); //Sets a function to call when cursor is on screen.
 	while (!glfwWindowShouldClose(w->window))
 	{
 		window_main_loop();
-		screen_process_list();
+		if (dir == -1)
+		{
+			screen_procces_array_down();
+		}
+		else if (dir == 1)
+		{
+			screen_procces_array_up();
+		}
+
+		//screen_process_list();
 		//window_timed_events();
 	}
 	window_terminate();
@@ -69,8 +79,9 @@ GLFWwindow *window_create_GLFW()
 	glfwSetCursorPosCallback(window, window_mouse_input);			  //Sets a function to call when cursor is on screen.
 
 	//glfwSetInputMode(window, GLFW_STICKY_KEYS, 1);
-	glfwSetKeyCallback(window, window_keyboard_controls);	 //Keyboard keycall back
-	glfwSetWindowSizeCallback(window, window_size_callback); //Window Size call back
+	glfwSetKeyCallback(window, window_keyboard_controls);		   //Keyboard keycall back
+	glfwSetWindowSizeCallback(window, window_size_callback);	   //Window Size call back
+	glfwSetMouseButtonCallback(window, window_mouse_button_input); //Mouse button call back
 	return window;
 }
 void window_timed_events()
@@ -124,6 +135,19 @@ void window_mouse_input(GLFWwindow *win, double xpos, double ypos)
 		w->mpos.y = w->mpos.y - (w->mpos.y % CUBE_SIZE); //clamping input
 	}
 }
+void window_mouse_button_input(GLFWwindow *win, int button, int action, int mods)
+{
+	if (action == GLFW_PRESS)
+	{
+		if (button == GLFW_MOUSE_BUTTON_RIGHT)
+		{
+		}
+		else if (button == GLFW_MOUSE_BUTTON_LEFT)
+		{
+			screen_add_sqaure(w->mpos.x, w->mpos.y);
+		}
+	}
+}
 void window_keyboard_controls(GLFWwindow *window, int key, int scancode, int action, int mods)
 {
 	if (action == GLFW_PRESS | action == GLFW_REPEAT)
@@ -175,6 +199,7 @@ void window_keyboard_controls(GLFWwindow *window, int key, int scancode, int act
 	if (glfwGetKey(window, GLFW_KEY_9))
 	{
 		char debug[100];
+		dir = -1;
 		//glfwGetCursorPos(window, &px, &py);
 		sprintf(debug, "%d", w->mpos.x);
 		puts(debug);
@@ -183,7 +208,7 @@ void window_keyboard_controls(GLFWwindow *window, int key, int scancode, int act
 	{
 		char debug[100];
 		//glfwGetCursorPos(window, &px, &py);
-
+		dir = 1;
 		sprintf(debug, "%d", w->scr->vertIndex);
 		puts(debug);
 	}

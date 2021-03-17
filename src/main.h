@@ -35,6 +35,7 @@ void window_timed_events();																	 // Sets all the callbacks and varia
 void window_main_loop();																	 //Display loop meant to be in a while loop
 void window_draw_cubes(int totalCubes, int *arrayVertices);									 //Drawcall
 void window_mouse_input(GLFWwindow *win, double xpos, double ypos);							 //mouseinput that outputs clamped positions
+void window_mouse_button_input(GLFWwindow *win, int button, int action, int mods);			 //moubebutton
 void window_keyboard_controls(GLFWwindow *win, int key, int scancode, int action, int mods); //keyboard
 void window_size_callback(GLFWwindow *window, int width, int height);
 void window_terminate();

@@ -14,7 +14,7 @@
 #define SCREEN_W SCREEN_WIDTH - CUBE_SIZE
 #define SCREEN_H SCREEN_HEIGHT - CUBE_SIZE
 
-#define SCREEN_ARRAY_WIDTH SCREEN_WIDTH / CUBE_SIZE	  //size of array
+#define SCREEN_ARRAY_WIDTH SCREEN_WIDTH / CUBE_SIZE   //size of array
 #define SCREEN_ARRAY_HEIGHT SCREEN_HEIGHT / CUBE_SIZE //size of array
 #
 #define Move_Speed 10
@@ -39,3 +39,31 @@
 //CALC.h
 #define CALC_INIT_SIZE 100
 #define CALC_REALLOC_SIZE 10
+
+static const char *fragment_shader_text =
+    "#version 440\n"
+    "in vec3 vs_position;\n"
+    "in vec3 vs_color;\n"
+    "in vec2 vs_texcoord;\n"
+    "out vec4 fs_color;\n"
+    "void main()\n"
+    "{\n"
+    "fs_color = vec4(vs_color, 1.f);\n"
+    "}\n";
+
+static const char *vertex_shader_text =
+    "#version 440\n"
+    "layout (location = 0) in vec3 vertex_position;\n"
+    "layout (location = 1) in vec3 vertex_color;\n"
+    "layout (location = 2) in vec2 vertex_texcoords;\n"
+    "out vec3 vs_position;\n"
+    "out vec3 vs_color;\n"
+    "out vec2 vs_texcoord;\n"
+    "void main()\n"
+    "{\n"
+    "vs_position = vertex_position;\n"
+    "vs_color = vertex_color;\n"
+    "vs_texcoord = vertex_texcoords;\n"
+
+    "gl_Position = vec4(vertex_position,1.f);\n"
+    "}\n";

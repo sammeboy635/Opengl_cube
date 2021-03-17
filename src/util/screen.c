@@ -18,7 +18,7 @@ Screen *screen_init()
 	scr->totalQuads = 0;
 	scr->vertIndex = 0;
 	scr->proccessQue = list_init();
-	scr->verts = (int *)malloc(sizeof(int) * SCREEN_ARRAY_WIDTH * SCREEN_ARRAY_HEIGHT);
+	scr->verts = (int *)malloc(sizeof(int) * ((SCREEN_ARRAY_WIDTH * SCREEN_ARRAY_HEIGHT) * 12));
 	return scr;
 }
 
@@ -29,11 +29,125 @@ void screen_add_sqaure(int x, int y)
 	if (scr->screen[xx][yy] == -1)
 	{
 		scr->screen[xx][yy] = scr->vertIndex;
-		list_add(scr->proccessQue, pix_init(x, y));
+		//list_add(scr->proccessQue, pix_init(x, y));
 
 		cube_set_xyz(scr->cc, x, y, ZZ);
 		cube_vert_cpy(scr->cc, 4, scr->verts, &scr->vertIndex);
 		scr->totalQuads += 4;
+	}
+}
+
+void screen_procces_array_down()
+{
+	for (int x = 0; x < SCREEN_ARRAY_WIDTH; x++)
+	{
+		for (int y = 1; y < SCREEN_ARRAY_HEIGHT; y++)
+		{
+			if (scr->screen[x][y] != -1)
+			{
+				if (scr->screen[x][y - 1] == -1) //check underneath the block
+				{
+					scr->screen[x][y - 1] = scr->screen[x][y];
+					cube_set_xyz(scr->cc, x * CUBE_SIZE, (y - 1) * CUBE_SIZE, ZZ);
+					cube_vert_cpy(scr->cc, 4, scr->verts, &scr->screen[x][y]);
+					scr->screen[x][y] = -1;
+				}
+				else if (x == 0) //check if it is the left border
+				{
+					if (scr->screen[x + 1][y - 1] == -1)
+					{
+						scr->screen[x + 1][y - 1] = scr->screen[x][y];
+						cube_set_xyz(scr->cc, (x + 1) * CUBE_SIZE, (y - 1) * CUBE_SIZE, ZZ);
+						cube_vert_cpy(scr->cc, 4, scr->verts, &scr->screen[x][y]);
+						scr->screen[x][y] = -1;
+					}
+				}
+				else if (x == SCREEN_ARRAY_WIDTH - 1) //check if it is the right border
+				{
+					if (scr->screen[x - 1][y - 1] == -1)
+					{
+						scr->screen[x - 1][y - 1] = scr->screen[x][y];
+						cube_set_xyz(scr->cc, (x - 1) * CUBE_SIZE, (y - 1) * CUBE_SIZE, ZZ);
+						cube_vert_cpy(scr->cc, 4, scr->verts, &scr->screen[x][y]);
+						scr->screen[x][y] = -1;
+					}
+				}
+				else // not left or right border everything else
+				{
+					if (scr->screen[x - 1][y - 1] == -1)
+					{
+						scr->screen[x - 1][y - 1] = scr->screen[x][y];
+						cube_set_xyz(scr->cc, (x - 1) * CUBE_SIZE, (y - 1) * CUBE_SIZE, ZZ);
+						cube_vert_cpy(scr->cc, 4, scr->verts, &scr->screen[x][y]);
+						scr->screen[x][y] = -1;
+					}
+					else if (scr->screen[x + 1][y - 1] == -1)
+					{
+						scr->screen[x + 1][y - 1] = scr->screen[x][y];
+						cube_set_xyz(scr->cc, (x + 1) * CUBE_SIZE, (y - 1) * CUBE_SIZE, ZZ);
+						cube_vert_cpy(scr->cc, 4, scr->verts, &scr->screen[x][y]);
+						scr->screen[x][y] = -1;
+					}
+				}
+			}
+		}
+	}
+}
+
+void screen_procces_array_up()
+{
+	for (int x = 0; x < SCREEN_ARRAY_WIDTH; x++)
+	{
+		for (int y = SCREEN_ARRAY_HEIGHT - 2; y >= 0; y--)
+		{
+			if (scr->screen[x][y] != -1)
+			{
+				if (scr->screen[x][y + 1] == -1) //check above the block
+				{
+					scr->screen[x][y + 1] = scr->screen[x][y];
+					cube_set_xyz(scr->cc, x * CUBE_SIZE, (y + 1) * CUBE_SIZE, ZZ);
+					cube_vert_cpy(scr->cc, 4, scr->verts, &scr->screen[x][y]);
+					scr->screen[x][y] = -1;
+				}
+				else if (x == 0) //check if it is the left border
+				{
+					if (scr->screen[x + 1][y + 1] == -1)
+					{
+						scr->screen[x + 1][y + 1] = scr->screen[x][y];
+						cube_set_xyz(scr->cc, (x + 1) * CUBE_SIZE, (y + 1) * CUBE_SIZE, ZZ);
+						cube_vert_cpy(scr->cc, 4, scr->verts, &scr->screen[x][y]);
+						scr->screen[x][y] = -1;
+					}
+				}
+				else if (x == SCREEN_ARRAY_WIDTH - 1) //check if it is the right border
+				{
+					if (scr->screen[x - 1][y + 1] == -1)
+					{
+						scr->screen[x - 1][y + 1] = scr->screen[x][y];
+						cube_set_xyz(scr->cc, (x - 1) * CUBE_SIZE, (y + 1) * CUBE_SIZE, ZZ);
+						cube_vert_cpy(scr->cc, 4, scr->verts, &scr->screen[x][y]);
+						scr->screen[x][y] = -1;
+					}
+				}
+				else // not left or right border everything else
+				{
+					if (scr->screen[x - 1][y + 1] == -1)
+					{
+						scr->screen[x - 1][y + 1] = scr->screen[x][y];
+						cube_set_xyz(scr->cc, (x - 1) * CUBE_SIZE, (y + 1) * CUBE_SIZE, ZZ);
+						cube_vert_cpy(scr->cc, 4, scr->verts, &scr->screen[x][y]);
+						scr->screen[x][y] = -1;
+					}
+					else if (scr->screen[x + 1][y + 1] == -1)
+					{
+						scr->screen[x + 1][y + 1] = scr->screen[x][y];
+						cube_set_xyz(scr->cc, (x + 1) * CUBE_SIZE, (y + 1) * CUBE_SIZE, ZZ);
+						cube_vert_cpy(scr->cc, 4, scr->verts, &scr->screen[x][y]);
+						scr->screen[x][y] = -1;
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -57,7 +171,7 @@ void screen_process_list()
 				free(current);
 				return;
 			}
-			else if (scr->proccessQue->head == current)
+			else if (scr->proccessQue->tail == current)
 			{
 				scr->proccessQue->tail = last;
 				free(current->ptr);
@@ -108,6 +222,7 @@ int screen_process(void *ptr)
 	cube_vert_cpy(scr->cc, 4, scr->verts, &index);
 	return TRUE;
 }
+
 void screen_clear()
 {
 	for (int x = 0; x < SCREEN_ARRAY_WIDTH; x++)

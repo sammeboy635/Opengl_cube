@@ -22,6 +22,8 @@ extern Screen *scr;
 
 Screen *screen_init();
 void screen_add_sqaure(int x, int y);
+void screen_procces_array_down();
+void screen_procces_array_up();
 void screen_process_list();
 int screen_process(void *ptr);
 void screen_clear();
