@@ -10,13 +10,43 @@
 Window *w; //Global storage var
 int dir;
 
+static const char *fragment_shader_text =
+	"#version 440\n"
+	"in vec3 vs_position;\n"
+	"in vec3 vs_color;\n"
+	"\n" // in vec2 vs_texcoord;
+	"out vec4 fs_color;\n"
+	"void main()\n"
+	"{\n"
+	"fs_color = vec4(vs_color, 1.f);\n"
+	"}\n";
+
+static const char *vertex_shader_text =
+	"#version 440\n"
+	"layout (location = 0) in vec3 vertex_position;\n"
+	"layout (location = 1) in vec3 vertex_color;\n"
+	"\n" //layout (location = 2) in vec2 vertex_texcoords;
+	"out vec3 vs_position;\n"
+	"out vec3 vs_color;\n"
+	"\n" // out vec2 vs_texcoord;
+	"void main()\n"
+	"{\n"
+	"vs_position = vertex_position;\n"
+	"vs_color = vertex_color;\n"
+	"\n" //vs_texcoord = vertex_texcoords;
+
+	"gl_Position = vec4(vertex_position,1.f);\n"
+	"}\n";
+
 int main(void)
 {
 	dir = -1;
 	window_init(); //Sets a function to call when cursor is on screen.
+	//window_program_init(); // testing
 	while (!glfwWindowShouldClose(w->window))
 	{
 		window_main_loop();
+		//window_main_loop_shader();
 		if (dir == -1)
 		{
 			screen_procces_array_down();
@@ -42,6 +72,23 @@ void window_init()
 	w->player.x = SCREEN_WIDTH / 2;
 	w->player.y = SCREEN_HEIGHT / 2;
 	w->scr = screen_init();
+
+	//testing
+	cube_set_xyz(w->scr->cc, 5, 5, ZZ);
+	int quad[12];
+	int index = 0;
+	cube_vert_cpy(w->scr->cc, 4, quad, &index);
+	index = 0;
+	for (int i = 1; i <= 4; i++)
+	{
+		w->scr->verts[0 * i] = quad[index++];
+		w->scr->verts[1 * i] = quad[index++];
+		w->scr->verts[2 * i] = quad[index++];
+		w->scr->verts[3 * i] = 1;
+		w->scr->verts[4 * i] = 1;
+		w->scr->verts[5 * i] = 1;
+	}
+	//end testing
 }
 GLFWwindow *window_create_GLFW()
 {
@@ -51,6 +98,9 @@ GLFWwindow *window_create_GLFW()
 	{
 		exit(0);
 	}
+
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
 
 	window = glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Cube World", NULL, NULL);
 
@@ -84,6 +134,39 @@ GLFWwindow *window_create_GLFW()
 	glfwSetMouseButtonCallback(window, window_mouse_button_input); //Mouse button call back
 	return window;
 }
+void window_program_init()
+{
+	GLuint vertex_buffer, vertex_shader, fragment_shader, program;
+	GLint col_location, vpos_location; //tex_location;
+
+	/*glGenBuffers(1, &vertex_buffer);
+	glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(w->scr->verts), w->scr->verts, GL_STATIC_DRAW); //sizeof(vertices)
+*/
+	vertex_shader = glCreateShader(GL_VERTEX_SHADER);
+	glShaderSource(vertex_shader, 1, &vertex_shader_text, NULL);
+	glCompileShader(vertex_shader);
+
+	fragment_shader = glCreateShader(GL_FRAGMENT_SHADER);
+	glShaderSource(fragment_shader, 1, &fragment_shader_text, NULL);
+	glCompileShader(fragment_shader);
+
+	w->program.program = glCreateProgram();
+	glAttachShader(w->program.program, vertex_shader);
+	glAttachShader(w->program.program, fragment_shader);
+	glLinkProgram(w->program.program);
+
+	vpos_location = glGetAttribLocation(w->program.program, "vs_position");
+	col_location = glGetUniformLocation(w->program.program, "vs_color");
+	//tex_location = glGetAttribLocation(w->program.program, "vs_texcoord");
+
+	glEnableVertexAttribArray(vpos_location);
+	glVertexAttribPointer(vpos_location, 3, GL_FLOAT, GL_FALSE,
+						  sizeof(w->scr->verts[0]), (void *)0);
+	glEnableVertexAttribArray(col_location);
+	glVertexAttribPointer(col_location, 3, GL_FLOAT, GL_FALSE,
+						  sizeof(w->scr->verts[0]), (void *)(sizeof(float) * 3));
+}
 void window_timed_events()
 {
 	float now = glfwGetTime();
@@ -111,6 +194,16 @@ void window_main_loop()
 	// Poll for and process events
 	glfwPollEvents();
 	//glfwWaitEvents();
+}
+void window_main_loop_shader()
+{
+	glClear(GL_COLOR_BUFFER_BIT);
+	//glUseProgram(w->program.program);
+
+	glDrawArrays(GL_QUADS, 0, 4);
+
+	glfwSwapBuffers(w->window);
+	glfwPollEvents();
 }
 void window_draw_cubes(int totalCubes, int *arrayVertices)
 {

@@ -18,11 +18,16 @@ typedef struct Player //Holds the keyboard movement positions
 	int x;
 	int y;
 } Player;
+typedef struct Program
+{
+	GLuint vertex_buffer, vertex_shader, fragment_shader, program;
+} Program;
 typedef struct Window //Main storage for all vars
 {
 	GLFWwindow *window;
 	Mouse mpos;
 	Screenxy wsize;
+	Program program;
 	//t_list memory;
 	Player player;
 	Screen *scr;
@@ -31,8 +36,10 @@ typedef struct Window //Main storage for all vars
 
 void window_init(); //Main window init
 GLFWwindow *window_create_GLFW();
-void window_timed_events();																	 // Sets all the callbacks and variables for glfw.
-void window_main_loop();																	 //Display loop meant to be in a while loop
+void window_program_init();
+void window_timed_events(); // Sets all the callbacks and variables for glfw.
+void window_main_loop();
+void window_main_loop_shader();																 //Display loop meant to be in a while loop
 void window_draw_cubes(int totalCubes, int *arrayVertices);									 //Drawcall
 void window_mouse_input(GLFWwindow *win, double xpos, double ypos);							 //mouseinput that outputs clamped positions
 void window_mouse_button_input(GLFWwindow *win, int button, int action, int mods);			 //moubebutton

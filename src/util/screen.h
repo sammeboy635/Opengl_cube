@@ -12,7 +12,7 @@ typedef struct Screen
 {
 	int vertIndex;
 	int totalQuads;
-	int *verts;
+	float *verts;
 	Tlist *proccessQue;
 	int screen[SCREEN_ARRAY_WIDTH][SCREEN_ARRAY_HEIGHT]; //Takes the index of where the vertices is
 	cubeCalc *cc;

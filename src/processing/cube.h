@@ -7,7 +7,7 @@
 	cx = x;               \
 	cX = x + 1;
 
-static int blockSides[6][3] = {{0, 1, 0}, {0, -1, 0}, {-1, 0, 0}, {1, 0, 0}, {0, 0, 1}, {0, 0, -1}};
+//static int blockSides[6][3] = {{0, 1, 0}, {0, -1, 0}, {-1, 0, 0}, {1, 0, 0}, {0, 0, 1}, {0, 0, -1}};
 
 typedef struct cubeCalc
 {
